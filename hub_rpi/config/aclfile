@@ -1,0 +1,14 @@
+# Mosquitto ACL File (Generic Template)
+# Asset-specific usernames and drone IDs will be added via Web GUI
+
+pattern deny all
+
+user GCS_PILOT
+topic readwrite drone/+/telemetry
+topic readwrite drone/+/command
+topic read drone/+/status
+
+user hub_admin
+topic readwrite #
+
+pattern deny anonymous
